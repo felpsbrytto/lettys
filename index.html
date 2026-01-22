@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Para Leticia</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background-color: #0f0f0f;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    .rosa {
+        width: 120px;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+
+    .texto {
+        opacity: 0;
+        transition: opacity 1.2s ease;
+    }
+
+    .texto.mostrar {
+        opacity: 1;
+    }
+
+    .nome {
+        font-size: 32px;
+        margin-bottom: 8px;
+        letter-spacing: 2px;
+    }
+
+    .data {
+        font-size: 20px;
+        color: #bbbbbb;
+    }
+
+    .mensagem {
+        margin-top: 20px;
+        font-size: 22px;
+        color: #ffb703;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+    }
+
+    .mensagem.mostrar {
+        opacity: 1;
+    }
+
+    @keyframes aparecer {
+        to { opacity: 1; }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<svg class="rosa" viewBox="0 0 16 24" xmlns="http://www.w3.org/2000/svg" id="rosa">
+
+    <!-- Flor -->
+    <rect x="6" y="0" width="4" height="4" fill="#c1121f"
+        style="opacity:0; animation: aparecer 0.3s forwards; animat
