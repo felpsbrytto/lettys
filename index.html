@@ -67,14 +67,14 @@
 
 <body>
 
-<!-- Música -->
-<audio autoplay loop>
+<!-- Áudio (não autoplay) -->
+<audio id="musica" loop>
     <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
 <div class="container">
 
-<svg class="rosa" viewBox="0 0 16 24" xmlns="http://www.w3.org/2000/svg" onclick="mostrarMensagem()">
+<svg class="rosa" viewBox="0 0 16 24" xmlns="http://www.w3.org/2000/svg">
 
     <!-- Flor -->
     <rect x="6" y="0" width="4" height="4" fill="#c1121f"
@@ -112,9 +112,14 @@
 </div>
 
 <script>
-function mostrarMensagem() {
-    document.getElementById("mensagem").classList.add("mostrar");
-}
+const rosa = document.querySelector('.rosa');
+const musica = document.getElementById('musica');
+const mensagem = document.getElementById('mensagem');
+
+rosa.addEventListener('click', () => {
+    mensagem.classList.add('mostrar'); // mostra a mensagem
+    musica.play(); // toca a música
+});
 </script>
 
 </body>
