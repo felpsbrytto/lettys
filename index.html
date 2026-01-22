@@ -27,12 +27,9 @@
     }
 
     .texto {
-        opacity: 0;
-        transition: opacity 1.2s ease;
-    }
-
-    .texto.mostrar {
-        opacity: 1;
+        opacity: 5;
+        animation: fade 1.5s forwards;
+        animation-delay: 2.8s;
     }
 
     .nome {
@@ -49,7 +46,7 @@
     .mensagem {
         margin-top: 20px;
         font-size: 22px;
-        color: #ffb703;
+        color: hsl(0, 100%, 51%);
         opacity: 0;
         transition: opacity 0.6s ease;
     }
@@ -61,6 +58,10 @@
     @keyframes aparecer {
         to { opacity: 1; }
     }
+
+    @keyframes fade {
+        to { opacity: 1; }
+    }
 </style>
 </head>
 
@@ -68,8 +69,48 @@
 
 <div class="container">
 
-<svg class="rosa" viewBox="0 0 16 24" xmlns="http://www.w3.org/2000/svg" id="rosa">
+<svg class="rosa" viewBox="0 0 16 24" xmlns="http://www.w3.org/2000/svg" onclick="mostrarMensagem()">
 
     <!-- Flor -->
     <rect x="6" y="0" width="4" height="4" fill="#c1121f"
-        style="opacity:0; animation: aparecer 0.3s forwards; animat
+        style="opacity:0; animation: aparecer 0.3s forwards; animation-delay:0.1s"/>
+    <rect x="4" y="2" width="8" height="4" fill="#d62828"
+        style="opacity:0; animation: aparecer 0.3s forwards; animation-delay:0.2s"/>
+    <rect x="3" y="4" width="10" height="4" fill="#e63946"
+        style="opacity:0; animation: aparecer 0.3s forwards; animation-delay:0.3s"/>
+    <rect x="4" y="6" width="8" height="4" fill="#d62828"
+        style="opacity:0; animation: aparecer 0.3s forwards; animation-delay:0.4s"/>
+    <rect x="6" y="8" width="4" height="4" fill="#c1121f"
+        style="opacity:0; animation: aparecer 0.3s forwards; animation-delay:0.5s"/>
+
+    <!-- Caule -->
+    <rect x="7" y="12" width="2" height="10" fill="#2a9d8f"
+        style="opacity:0; animation: aparecer 0.3s forwards; animation-delay:0.6s"/>
+
+    <!-- Folhas -->
+    <rect x="5" y="14" width="2" height="2" fill="#2a9d8f"
+        style="opacity:0; animation: aparecer 0.3s forwards; animation-delay:0.7s"/>
+    <rect x="9" y="16" width="2" height="2" fill="#2a9d8f"
+        style="opacity:0; animation: aparecer 0.3s forwards; animation-delay:0.8s"/>
+
+</svg>
+
+<div class="texto">
+    <div class="nome">Leticia</div>
+    <div class="data">07/10</div>
+</div>
+
+<div id="mensagem" class="mensagem">
+    i love you ❤️
+</div>
+
+</div>
+
+<script>
+function mostrarMensagem() {
+    document.getElementById("mensagem").classList.add("mostrar");
+}
+</script>
+
+</body>
+</html>
