@@ -14,6 +14,7 @@
         align-items: center;
         font-family: Arial, Helvetica, sans-serif;
         color: white;
+        cursor: pointer; /* indica que pode clicar */
     }
 
     .container {
@@ -67,7 +68,7 @@
 
 <body>
 
-<!-- Áudio (não autoplay) -->
+<!-- Áudio -->
 <audio id="musica" loop>
     <source src="musica.mp3" type="audio/mpeg">
 </audio>
@@ -116,9 +117,19 @@ const rosa = document.querySelector('.rosa');
 const musica = document.getElementById('musica');
 const mensagem = document.getElementById('mensagem');
 
+let musicaIniciada = false;
+
+// Funciona no primeiro clique em qualquer lugar da página
+document.body.addEventListener('click', () => {
+    if (!musicaIniciada) {
+        musica.play(); // toca a música
+        musicaIniciada = true;
+    }
+}, { once: true });
+
+// Clique na rosa continua mostrando a mensagem
 rosa.addEventListener('click', () => {
-    mensagem.classList.add('mostrar'); // mostra a mensagem
-    musica.play(); // toca a música
+    mensagem.classList.add('mostrar');
 });
 </script>
 
